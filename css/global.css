@@ -12,10 +12,10 @@ body {
   margin-top: 8rem;
   max-width: 30rem;
   background: #fff;
-  border: 1px solid #e0e0e0;
   border-radius: 0.5rem;
   padding: 2rem;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 h1 {
   text-align: center;

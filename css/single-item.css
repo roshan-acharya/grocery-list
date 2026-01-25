@@ -9,6 +9,9 @@
   width: 1rem;
   height: 1rem;
 }
+input[type="checkbox"]:checked {
+  accent-color: #131224;
+}
 .single-item .btn {
   cursor: pointer;
   color: #070707;
