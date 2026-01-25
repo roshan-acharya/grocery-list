@@ -1,0 +1,28 @@
+.input-items {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 10px;
+}
+.item-input {
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0;
+  border-radius: 25px;
+  border: 1px solid #1b1313;
+}
+
+.item-input::placeholder {
+  color: #1b1313;
+  padding-left: 10px;
+}
+
+.input-btn {
+  cursor: pointer;
+  color: #1b1313;
+  border: 1px solid #1b1313;
+  border-radius: 0;
+  background-color: transparent;
+  padding: 0.375rem 0.75rem;
+  text-transform: capitalize;
+  border-radius: 25px;
+}
