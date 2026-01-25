@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 100px;
   gap: 10px;
+  margin-bottom: 1rem;
 }
 .item-input {
   width: 100%;

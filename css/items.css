@@ -1,0 +1,7 @@
+.items {
+  margin-top: 1.5rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
