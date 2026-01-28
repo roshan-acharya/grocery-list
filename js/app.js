@@ -61,5 +61,18 @@ form.addEventListener("submit", (e) => {
   renderItems();
 });
 
+app.addEventListener("change", (e) => {
+  if (e.target.type !== "checkbox") return;
+
+  const id = e.target.closest(".single-item").dataset.id;
+
+  const items = getItems().map((item) =>
+    item.id === id ? { ...item, completed: e.target.checked } : item,
+  );
+
+  saveItems(items);
+  renderItems();
+});
+
 //render items from local storage on page load
 document.addEventListener("DOMContentLoaded", renderItems);
