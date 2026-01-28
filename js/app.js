@@ -60,3 +60,6 @@ form.addEventListener("submit", (e) => {
   input.value = "";
   renderItems();
 });
+
+//render items from local storage on page load
+document.addEventListener("DOMContentLoaded", renderItems);
