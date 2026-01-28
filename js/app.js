@@ -14,6 +14,34 @@ function saveItems(items) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
 }
 
+//render items
+function renderItems() {
+  app.innerHTML = "";
+  const items = getItems();
+
+  items.forEach((item) => {
+    const div = document.createElement("div");
+    div.className = "single-item";
+    div.dataset.id = item.id;
+
+    //elemen to append for rendering
+    div.innerHTML = `
+      <input type="checkbox" ${item.completed ? "checked" : ""} />
+      <p class="${item.completed ? "completed" : ""}">
+        ${item.name}
+      </p>
+      <button class="btn icon-btn edit-btn" type="button">
+        <i class="fa-regular fa-pen-to-square"></i>
+      </button>
+      <button class="btn icon-btn remove-btn" type="button">
+        <i class="fa-regular fa-trash-can"></i>
+      </button>
+    `;
+
+    app.appendChild(div);
+  });
+}
+
 //add items to local storage
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -30,4 +58,5 @@ form.addEventListener("submit", (e) => {
 
   saveItems(items);
   input.value = "";
+  renderItems();
 });
