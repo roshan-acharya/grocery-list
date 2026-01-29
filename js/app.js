@@ -74,5 +74,23 @@ app.addEventListener("change", (e) => {
   renderItems();
 });
 
+//delete items
+function deleteItem(id) {
+  const items = getItems().filter((item) => item.id !== id);
+  saveItems(items);
+  renderItems();
+}
+
+app.addEventListener("click", (e) => {
+  const itemDiv = e.target.closest(".single-item");
+  if (!itemDiv) return;
+
+  const id = itemDiv.dataset.id;
+
+  if (e.target.closest(".remove-btn")) {
+    deleteItem(id);
+  }
+});
+
 //render items from local storage on page load
 document.addEventListener("DOMContentLoaded", renderItems);
