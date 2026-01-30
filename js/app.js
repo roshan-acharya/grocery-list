@@ -92,5 +92,18 @@ app.addEventListener("click", (e) => {
   }
 });
 
+//update items
+function updateItem(id, newValue) {
+  if (!newValue.trim()) {
+    renderItems();
+    return;
+  }
+  const items = getItems().map((item) =>
+    item.id === id ? { ...item, name: newValue.trim() } : item,
+  );
+  saveItems(items);
+  renderItems();
+}
+
 //render items from local storage on page load
 document.addEventListener("DOMContentLoaded", renderItems);
