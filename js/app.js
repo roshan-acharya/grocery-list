@@ -105,5 +105,33 @@ function updateItem(id, newValue) {
   renderItems();
 }
 
+//event listener for edit items
+app.addEventListener("click", (e) => {
+  const itemDiv = e.target.closest(".single-item");
+  if (!itemDiv) return;
+
+  const id = itemDiv.dataset.id;
+
+  if (e.target.closest(".edit-btn")) {
+    const textE1 = itemDiv.querySelector("p");
+    const oldValue = textE1.textContent.trim();
+
+    const inputE1 = document.createElement("input");
+    inputE1.type = "text";
+    inputE1.value = oldValue;
+    inputE1.className = "item-input";
+
+    textE1.replaceWith(inputE1);
+    inputE1.focus();
+
+    inputE1.addEventListener("blur", () => {
+      updateItem(id, inputE1.value);
+    });
+
+    inputE1.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") inputE1.blur();
+    });
+  }
+});
 //render items from local storage on page load
 document.addEventListener("DOMContentLoaded", renderItems);
