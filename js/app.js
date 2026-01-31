@@ -47,7 +47,10 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const value = input.value.trim();
-  if (!value) return;
+  if (!value) {
+    alert("Please add some input");
+    return;
+  }
 
   const items = getItems();
   items.push({
